@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0c0c0c;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+
+.background-eye {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background-image: url("image/40a63ab3589f8d8d4eaaf90f7ccccdcc.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+    animation: rotate-eye 20s linear infinite;
+    filter: blur(4px);
+}
+
+@keyframes rotate-eye {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(12, 12, 12, 0.7);
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(88, 10, 10, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background-color: rgba(88, 10, 10, 0.7);
+    border-color: rgba(150, 40, 40, 0.8);
+}
+
+
+
+.main-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 8rem 2rem 5rem;
+}
+
+.content-section {
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.content-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(88, 10, 10, 0.6);
+}
+
+
+.hero-section {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(88, 10, 10, 0.8);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-top: 1rem;
+}
+
+
+#story p {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+}
+
+.game-card {
+    background-color: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(88, 10, 10, 0.3);
+}
+
+.game-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.game-main-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.minigames-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+}
+
+.minigames-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.minigames-list img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #0c0c0c;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #888;
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+    .navbar { padding: 1rem; }
+    .main-content { padding: 6rem 1rem 4rem; }
+    
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .section-title { font-size: 2rem; }
+    
+    .nav-links {
+        display: flex; 
+        gap: 0.5rem;
+    }
+    .nav-link { font-size: 0.9rem; padding: 0.4rem 0.6rem; }
+}
+
+@media (max-width: 480px) {
+    .background-eye { width: 300px; height: 300px; }
+}
+
+
+/* ////////////////////////////////////////////////////// */
+.i_can{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+animation: spin 10s infinite linear;
+
+}
+.hello{
+    height: 200px;
+    width: 250px;
+    border: 1px solid rgb(148, 6, 6);
+    border-radius: 5%;
+    background-image: linear-gradient(to right,rgba(8, 8, 8, 0.712) , rgba(85, 8, 8, 0.712) , rgba(82, 25, 25, 0.664) , rgba(255, 255, 255, 0.185) ,rgba(82, 25, 25, 0.678));
+    text-align: center;
+}
+.code{
+    margin: 100px auto;
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+.you_cant{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    animation: spin 20s infinite linear;
+    gap: 1em;  
+}
+.code::-webkit-scrollbar{
+    display: none;
+
+}
+.hi{
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(88, 10, 10, 0.6);
+    background-color: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: font-size 1s ease , background-color 1s ease, border-color 1s ease , transform 0.3s ease;
+}
+.hi:hover{
+    background-color: rgba(88, 10, 10, 0.7);
+    border-color: rgba(150, 40, 40, 0.8);
+    font-size: 2em;
+    transform: translateY(-10px);
+}
+.hecllo{
+    font-size: 2.5em;
+     box-shadow: 12px 12px 20px rgb(105, 22, 22), -12px -12px 20px rgb(105, 22, 22)inset; color: brown;
+     transition: all 0.3s ease;
+
+}
+.hecllo:hover{
+    box-shadow: 4px 4px 10px rgb(150, 40, 40), -4px -4px 10px rgb(150, 40, 40)inset; color: darkred;
+    font-size: 3em;
+    transform: translateY(-10px);
+}
+@keyframes spin {
+    from { translate: 0; }
+    to { translate: -100%; }
+}
